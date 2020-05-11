@@ -1,0 +1,14 @@
+.panel-primary>.panel-heading {
+  color: mediumblue;
+  border-color: #337ab7;
+  text-align: center;
+  font-size: x-large;
+}
+
+.panel-primary>.panel-heading {
+  background-color: #ffffff;
+}
+
+.panel.panel-primary {
+  margin: 7rem auto;
+}

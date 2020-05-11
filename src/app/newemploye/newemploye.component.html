@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Nouveau Employé</div>
+    <div class="panel-body">
+      <div>
+        <form [formGroup]="signInForm" (ngSubmit)="addEmploye()">
+        <div  class="form-group">
+          <label class="control-label">Nom</label>
+          <input type="text" id="nom" class="form-control" formControlName="nom" [(ngModel)]="employe.nom" />
+        </div>
+
+        <div  class="form-group">
+          <label class="control-label">Prénom</label>
+          <input  type="text" id="prenom" class="form-control" formControlName="prenom" [(ngModel)]="employe.prenom" />
+        </div>
+
+        <div  class="form-group">
+          <label class="control-label">Département</label>
+          <input type="text" id="departement" class="form-control" formControlName="departement" [(ngModel)]="employe.departement" />
+        </div>
+
+        <div  class="form-group">
+          <label class="control-label">Téléphone</label>
+          <input ctype="text" id="tel" class="form-control" formControlName="tel" [(ngModel)]="employe.telephone" />
+        </div>
+
+        <div  class="form-group">
+          <label class="control-label">Email</label>
+          <input  type="text" id="email" class="form-control" formControlName="email" [(ngModel)]="employe.email" />
+        </div>
+
+        <div  class="form-group">
+          <label class="control-label">Salaire</label>
+          <input ctype="text" id="salaire" class="form-control" formControlName="salaire" [(ngModel)]="employe.salaire" />
+        </div>
+
+        <div  class="form-group">
+          <label class="control-label">Date d'Embauche</label>
+          <input type="date" id="date" class="form-control" formControlName="date" [(ngModel)]="employe.datedebut" />
+        </div>
+
+        <div  class="form-group">
+          <label class="control-label">CIN</label>
+          <input type="text" id="cin" class="form-control" formControlName="cin" [(ngModel)]="employe.cin" />
+        </div>
+          <button type ="submit" class="btn btn-primary" [disabled]="signInForm.invalid" >Enregistrer</button>
+        </form>
+        <p class="text-danger">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,24 @@
+.clickable {
+  cursor: pointer;
+  color: #337ab7;
+}
+
+.clickable:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+.panel-primary>.panel-heading {
+  color: mediumblue;
+  border-color: #337ab7;
+  text-align: center;
+  font-size: x-large;
+}
+
+.panel-primary>.panel-heading {
+  background-color: #ffffff;
+}
+
+.panel.panel-primary {
+  margin: 7rem auto;
+}

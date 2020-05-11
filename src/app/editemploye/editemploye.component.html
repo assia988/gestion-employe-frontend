@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Editer Employé</div>
+    <div class="panel-body">
+      <div>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+          <div  class="form-group">
+            <label class="control-label">Nom</label>
+            <input type="text" id="nom" class="form-control" formControlName="nom" [(ngModel)]="employee.nom" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Prénom</label>
+            <input  type="text" id="prenom" class="form-control" formControlName="prenom" [(ngModel)]="employee.prenom" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Département</label>
+            <input type="text" id="departement" class="form-control" formControlName="departement" [(ngModel)]="employee.departement" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Téléphone</label>
+            <input ctype="text" id="tel" class="form-control" formControlName="tel" [(ngModel)]="employee.telephone" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Email</label>
+            <input  type="text" id="email" class="form-control" formControlName="email" [(ngModel)]="employee.email" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Salaire</label>
+            <input ctype="text" id="salaire" class="form-control" formControlName="salaire" [(ngModel)]="employee.salaire" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Date d'Embauche</label>
+            <input type="date" id="date" class="form-control" formControlName="date" [(ngModel)]="employee.datedebut" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">CIN</label>
+            <input type="text" id="cin" class="form-control" formControlName="cin" [(ngModel)]="employee.cin" />
+          </div>
+          <button type ="submit" class="btn btn-primary" [disabled]="signInForm.invalid" >Enregistrer</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
