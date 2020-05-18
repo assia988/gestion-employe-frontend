@@ -9,18 +9,18 @@ export class EmployeService{
 
   }
   getEmployes(){
-    return  this.httpClient.get("http://localhost:8080/employes");
+    return  this.httpClient.get("http://localhost:8088/employes");
   }
   saveEmploye(employe:ModelEmploye){
-    return this.httpClient.post("http://localhost:8080/employes",employe);
+    return this.httpClient.post("http://localhost:8088/employes",employe);
   }
   updateEmploye(employe:ModelEmploye, id:number){
-    return this.httpClient.put("http://localhost:8080/employes/"+ employe.id ,employe);
+    return this.httpClient.put("http://localhost:8088/employes/"+ employe.id ,employe);
   }
   getEmploye(id:number){
-    return this.httpClient.get("http://localhost:8080/employes/"+id);
+    return this.httpClient.get("http://localhost:8088/employes/"+id);
   }
   deleteEmploye(id:number){
-    return this.httpClient.delete("http://localhost:8080/employes/"+id);
+    return this.httpClient.delete("http://localhost:8088/employes/"+id);
   }
 }
