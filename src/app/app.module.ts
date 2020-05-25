@@ -13,12 +13,14 @@ import { NewemployeComponent } from './newemploye/newemploye.component';
 import { EditemployeComponent } from './editemploye/editemploye.component';
 import { HeaderComponent } from './header/header.component';
 import { UpdnewincsalaryComponent } from './updnewincsalary/updnewincsalary.component';
+import { NewsalaryComponent } from './newsalary/newsalary.component';
 
 const appRoutes:Routes=[
   {path:'employes', component:ListEmployeComponent},
   {path:'newemploye', component:NewemployeComponent},
   {path:'editemploye/:id', component:EditemployeComponent},
   {path:'incsalary', component:UpdnewincsalaryComponent},
+  {path:'newsalary', component:NewsalaryComponent},
   {path:'',redirectTo:'/employes',pathMatch:'full'}
 ]
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes:Routes=[
     NewemployeComponent,
     EditemployeComponent,
     HeaderComponent,
-    UpdnewincsalaryComponent
+    UpdnewincsalaryComponent,
+    NewsalaryComponent
   ],
   imports: [
     BrowserModule,
