@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {EmployeService} from '../../services/employe.service';
 import {Router} from '@angular/router';
 import {ModelEmploye} from '../../model/model.employe';
-
+import {ModelIncsalary} from "../../model/model.incsalary";
 
 @Component({
   selector: 'app-list-employe',
@@ -39,5 +39,9 @@ export class ListEmployeComponent implements OnInit {
           //console.log(this.listEmploye);
         },
         error => console.log(error));
+  }
+
+  incSalary(){
+    this.router.navigate(['incsalary']);
   }
 }

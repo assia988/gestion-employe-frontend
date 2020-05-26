@@ -1,0 +1,26 @@
+<div class="container" *ngIf="incsalaries">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Nouveau salaire</div>
+    <div class="panel-body">
+      <table class="table table-hover" *ngIf="incsalaries">
+        <thead>
+        <tr>
+          <th scope="col">Nom</th>
+          <th scope="col">Prénom</th>
+          <th scope="col">Prime</th>
+          <th scope="col">Jours de congé suplémentaires</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let i of incsalaries" >
+          <td>{{i.nom}}</td>
+          <td>{{i.prenom}}</td>
+          <td>{{ newSalary(i)}}</td>
+          <td>{{ jourSup(i)}}</td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

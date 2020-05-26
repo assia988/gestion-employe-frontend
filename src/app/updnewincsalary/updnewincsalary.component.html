@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Evaluation de l'employé</div>
+    <div class="panel-body">
+      <div>
+        <form [formGroup]="incsalaryForm" (ngSubmit)="addIncsalary()">
+          <div  class="form-group">
+            <label class="control-label">Nom</label>
+            <input type="text"  class="form-control" formControlName="nom" list="nom" [(ngModel)]="incsalary.nom" />
+            <datalist id="nom">
+              <option *ngFor="let e of listEmploye">{{ e.nom }}
+              </option>
+            </datalist>
+
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Prénom</label>
+            <input  type="text" class="form-control" formControlName="prenom" list="prenom" [(ngModel)]="incsalary.prenom" />
+            <datalist id="prenom">
+              <option *ngFor="let e of listEmploye">{{ e.prenom }}
+              </option>
+            </datalist>
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">nbrcertif</label>
+            <input type="text" id="nbrcertif" class="form-control" formControlName="nbrcertif" [(ngModel)]="incsalary.nbrcertif" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Volonté d'apprentissage</label>
+            <input ctype="text" id="volapprentissage" class="form-control" formControlName="volapprentissage" [(ngModel)]="incsalary.volapprentissage" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Travail suplémentaire</label>
+            <input  type="text" id="travailsup" class="form-control" formControlName="travailsup" [(ngModel)]="incsalary.travailsup" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Motivation</label>
+            <input ctype="text" id="motivation" class="form-control" formControlName="motivation" [(ngModel)]="incsalary.motivation" />
+          </div>
+
+          <div  class="form-group">
+            <label class="control-label">Innovation</label>
+            <input type="text" id="innovation" class="form-control" formControlName="innovation" [(ngModel)]="incsalary.innovation" />
+          </div>
+
+          <button type ="submit" class="btn btn-primary" [disabled]="incsalaryForm.invalid" >Evaluer</button>
+        </form>
+        <p class="text-danger">{{ errorMessage }}</p>
+      </div>
+    </div>
+  </div>
+</div>

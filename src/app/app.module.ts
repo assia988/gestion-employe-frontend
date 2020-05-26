@@ -7,15 +7,20 @@ import { ListEmployeComponent } from './list-employe/list-employe.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule, Routes} from '@angular/router';
 import {EmployeService} from '../services/employe.service';
+import {IncsalaryService} from "../services/incsalary.service";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewemployeComponent } from './newemploye/newemploye.component';
 import { EditemployeComponent } from './editemploye/editemploye.component';
 import { HeaderComponent } from './header/header.component';
+import { UpdnewincsalaryComponent } from './updnewincsalary/updnewincsalary.component';
+import { NewsalaryComponent } from './newsalary/newsalary.component';
 
 const appRoutes:Routes=[
   {path:'employes', component:ListEmployeComponent},
   {path:'newemploye', component:NewemployeComponent},
   {path:'editemploye/:id', component:EditemployeComponent},
+  {path:'incsalary', component:UpdnewincsalaryComponent},
+  {path:'newsalary', component:NewsalaryComponent},
   {path:'',redirectTo:'/employes',pathMatch:'full'}
 ]
 @NgModule({
@@ -24,7 +29,9 @@ const appRoutes:Routes=[
     ListEmployeComponent,
     NewemployeComponent,
     EditemployeComponent,
-    HeaderComponent
+    HeaderComponent,
+    UpdnewincsalaryComponent,
+    NewsalaryComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,7 @@ const appRoutes:Routes=[
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [EmployeService],
+  providers: [EmployeService, IncsalaryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
