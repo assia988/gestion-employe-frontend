@@ -6,8 +6,9 @@
         <form [formGroup]="incsalaryForm" (ngSubmit)="addIncsalary()">
           <div  class="form-group">
            <label class="control-label">Nom</label>
-            <input type="text"  class="form-control" formControlName="nom" list="nom" [(ngModel)]="incsalary.nom" />
-            <datalist id="nom">
+<!--            <input type="text" class="form-control" formControlName="nom" [(ngModel)]="incsalary.nom" [(ngModel)]="employee.nom"  />-->
+            <input type="text" id="nom" class="form-control" formControlName="nom" [(ngModel)]="employee.nom" />
+            <datalist id="nomm">
               <option *ngFor="let e of listEmploye">{{ e.nom }}
               </option>
             </datalist>
@@ -16,11 +17,12 @@
 
           <div  class="form-group">
             <label class="control-label">Prénom</label>
-            <input  type="text" class="form-control" formControlName="prenom" list="prenom" [(ngModel)]="incsalary.prenom" />
-            <datalist id="prenom">
-              <option *ngFor="let e of listEmploye">{{ e.prenom }}
-              </option>
-            </datalist>
+            <input  type="text" id="prenom" class="form-control" formControlName="prenom" [(ngModel)]="employee.prenom" />
+<!--            <input  type="text" class="form-control" formControlName="prenom" list="prenom" [(ngModel)]="incsalary.prenom" />-->
+<!--            <datalist id="prenomm">-->
+<!--              <option *ngFor="let e of listEmploye">{{ e.prenom }}-->
+<!--              </option>-->
+<!--            </datalist>-->
           </div>
 
           <div  class="form-group">

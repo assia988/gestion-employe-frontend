@@ -21,7 +21,7 @@ export class ListEmployeComponent implements OnInit {
    this.employeservice.getEmployes()
      .subscribe(data=> {
          this.listEmploye= data; //data contient la reponse http format json
-         //console.log(this.listEmploye);
+         console.log(this.listEmploye);
        },err=>{
          console.log(err);
        }
@@ -41,7 +41,7 @@ export class ListEmployeComponent implements OnInit {
         },
         error => console.log(error));
   }
-  incSalary(){
-    this.router.navigate(['incsalary']);
+  incSalary(id:number){
+    this.router.navigate(['incsalary', id]);
   }
 }

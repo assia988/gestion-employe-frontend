@@ -13,22 +13,13 @@ import {Router} from "@angular/router";
 export class NewsalaryComponent implements OnInit {
   inc;
   incsalaries;
-  listEmploye;
-  constructor(public httpClient: HttpClient,public employeservice:EmployeService ,public incsalaryservice: IncsalaryService ,public router:Router) { }
+  constructor(public httpClient: HttpClient,public employeservice:EmployeService ,
+              public incsalaryservice: IncsalaryService ,public router:Router) { }
 
   ngOnInit(): void {
     this.incsalaryservice.getIncsalaries()
       .subscribe(data=> {
           this.incsalaries= data;
-
-        },err=>{
-          console.log(err);
-        }
-      );
-
-    this.employeservice.getEmployes()
-      .subscribe(data=> {
-          this.listEmploye= data;
         },err=>{
           console.log(err);
         }
@@ -38,6 +29,8 @@ export class NewsalaryComponent implements OnInit {
     this.inc= incsalary.innovation*50+ incsalary.motivation*50+
       incsalary.travailsup*50+ incsalary.volapprentissage*50+
       incsalary.nbrcertif*50;
+    console.log(this.inc);
     return this.inc;
   }
+
 }
