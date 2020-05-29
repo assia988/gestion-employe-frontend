@@ -3,9 +3,9 @@ export class ModelIncsalary {
   nom:String="";
   prenom:String="";
   nbrcertif:number=0;
-  volapprentissage:number=0;
-  travailsup:number=0;
-  motivation:number=0;
-  innovation:number=0;
+  nbrmission:number=0;
+  nbdhtrweek:number=0;
+  nbrdhtravailjourferier: number=0;
+  prime:number=0;
 
 }

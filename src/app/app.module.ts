@@ -15,6 +15,8 @@ import { HeaderComponent } from './header/header.component';
 import { UpdnewincsalaryComponent } from './updnewincsalary/updnewincsalary.component';
 import { NewsalaryComponent } from './newsalary/newsalary.component';
 import { GraphesComponent } from './graphes/graphes.component';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { PrimeComponent } from './prime/prime.component';
 
 const appRoutes:Routes=[
   {path:'employes', component:ListEmployeComponent},
@@ -23,6 +25,8 @@ const appRoutes:Routes=[
   {path:'incsalary/:id', component:UpdnewincsalaryComponent},
   {path:'newsalary', component:NewsalaryComponent},
   {path:'graphes', component:GraphesComponent},
+  {path:'acceuil', component:AcceuilComponent},
+  {path:'prime/:id', component:PrimeComponent},
   {path:'',redirectTo:'/employes',pathMatch:'full'}
 ]
 @NgModule({
@@ -34,7 +38,9 @@ const appRoutes:Routes=[
     HeaderComponent,
     UpdnewincsalaryComponent,
     NewsalaryComponent,
-    GraphesComponent
+    GraphesComponent,
+    AcceuilComponent,
+    PrimeComponent
   ],
   imports: [
     BrowserModule,

@@ -11,9 +11,9 @@ import {Router} from "@angular/router";
   styleUrls: ['./newsalary.component.css']
 })
 export class NewsalaryComponent implements OnInit {
-  inc;
+
   incsalaries;
-  constructor(public httpClient: HttpClient,public employeservice:EmployeService ,
+  constructor(public httpClient: HttpClient,
               public incsalaryservice: IncsalaryService ,public router:Router) { }
 
   ngOnInit(): void {
@@ -25,12 +25,8 @@ export class NewsalaryComponent implements OnInit {
         }
       );
   }
-  newSalary( incsalary:ModelIncsalary){
-    this.inc= incsalary.innovation*50+ incsalary.motivation*50+
-      incsalary.travailsup*50+ incsalary.volapprentissage*50+
-      incsalary.nbrcertif*50;
-    console.log(this.inc);
-    return this.inc;
-  }
-
+  // jourSup( incsalary:ModelIncsalary){
+  //   this.jours= incsalary.travailsup*1;
+  //   return this.jours;
+  // }
 }

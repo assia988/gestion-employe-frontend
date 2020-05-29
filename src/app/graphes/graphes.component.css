@@ -2,4 +2,19 @@
   display: block;
   width: 400px;
   height: 400px;
+  margin: auto;
 }
+.imag{
+  width:42rem;
+}
+.ctn{
+  text-align: center;
+  margin-bottom: 7rem;
+}
+p{
+  text-align: center;
+  color: darkred;
+  font-size: x-large;
+}
+
+

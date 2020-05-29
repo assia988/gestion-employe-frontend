@@ -4,6 +4,7 @@ import {EmployeService} from '../../services/employe.service';
 import {Router} from '@angular/router';
 import {ModelEmploye} from '../../model/model.employe';
 import {ModelIncsalary} from "../../model/model.incsalary";
+import {IncsalaryService} from '../../services/incsalary.service';
 
 
 @Component({
@@ -13,7 +14,9 @@ import {ModelIncsalary} from "../../model/model.incsalary";
 })
 export class ListEmployeComponent implements OnInit {
   listEmploye;
-  constructor(public httpClient: HttpClient, public employeservice:EmployeService,public router:Router) {
+  incsalaries;
+  constructor(public httpClient: HttpClient, public employeservice:EmployeService,
+              public incsalaryService: IncsalaryService, public router:Router) {
 
   }
 
@@ -21,12 +24,10 @@ export class ListEmployeComponent implements OnInit {
    this.employeservice.getEmployes()
      .subscribe(data=> {
          this.listEmploye= data; //data contient la reponse http format json
-         console.log(this.listEmploye);
        },err=>{
          console.log(err);
        }
      );
-
   }
   onEditEmploye(id:number){
     this.router.navigate(['editemploye',id]);
@@ -36,8 +37,29 @@ export class ListEmployeComponent implements OnInit {
       .subscribe(
         data => {
           //console.log(data);
+          this.incsalaryService.getIncsalaries()
+            .subscribe(data=> {
+                this.incsalaries= data;
+                for(var i=0; i<this.incsalaries.length; i++){
+                  if ((this.incsalaries[i].nom === e.nom) && (this.incsalaries[i].prenom === e.prenom)){
+                    this.incsalaryService.deleteInc(this.incsalaries[i].id)
+                      .subscribe(
+                        data => {
+                          this.incsalaries = this.incsalaries.filter(employe => employe.id !== this.incsalaries[i].id);
+                          console.log(data)
+                        },
+                        error => console.log(error));
+                  }
+                    }
+              },err=>{
+                console.log(err);
+              }
+            );
+
           this.listEmploye = this.listEmploye.filter(employe => employe.id !== e.id)
           //console.log(this.listEmploye);
+
+
         },
         error => console.log(error));
   }

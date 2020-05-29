@@ -26,3 +26,13 @@ h1{
 .panel.panel-primary {
   margin: 7rem auto;
 }
+.ob{
+  font-weight: bold;
+}
+.ab{
+  font-weight: bold;
+  color: green;
+}
+.glyphicon-arrow-up:before {
+  color: green;
+}

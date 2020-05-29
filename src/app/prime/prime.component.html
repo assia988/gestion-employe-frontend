@@ -1,13 +1,13 @@
-<h1>Montant augmenté des employés pour l'année prochaine</h1>
-<div class="container" *ngIf="incsalaries">
+<h1>Augmentation du salaire de l'employé  pour l'année prochaine</h1>
+<div class="container" *ngIf="incsalary">
   <div class="panel panel-primary">
     <div class="panel-body">
-      <table class="table table-hover" *ngIf="incsalaries">
+      <table class="table table-hover" *ngIf="incsalary">
         <thead>
         <tr>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
           <th scope="col">Nom</th>
-          <th scope="col">Prénom</th>
+          <th scope="col">Preom</th>
           <th scope="col">Nombre de jours travaillé pendant le weekend</th>
           <th scope="col">Nombre de jours fériers travaillés</th>
           <th scope="col">Nombre de certifications</th>
@@ -16,19 +16,19 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let i of incsalaries" >
+        <tr>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-          <td>{{i.nom}}</td>
-          <td >{{i.prenom}}</td>
-          <td>{{i.nbdhtrweek}}</td>
-          <td >{{i.nbrdhtravailjourferier}}</td>
-          <td>{{i.nbrcertif}}</td>
-          <td>{{i.nbrmission}}</td>
-          <td class=" ab glyphicon glyphicon-plus-sign">{{i.prime}}</td>
+          <td>{{incsalary.nom}}</td>
+          <td>{{incsalary.prenom}}</td>
+          <td>{{incsalary.nbdhtrweek}}</td>
+          <td>{{incsalary.nbrdhtravailjourferier}}</td>
+          <td>{{incsalary.nbrcertif}}</td>
+          <td>{{incsalary.nbrmission}}</td>
+          <td class=" ab glyphicon glyphicon-plus-sign">{{incsalary.prime}}</td>
+        <tr>
         </tr>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-

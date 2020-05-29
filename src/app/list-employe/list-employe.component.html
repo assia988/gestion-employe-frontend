@@ -1,6 +1,6 @@
+<h1>Liste des Employés</h1>
 <div class="container" *ngIf="listEmploye">
   <div class="panel panel-primary">
-    <div class="panel-heading">Liste des Employés</div>
     <div class="panel-body">
       <table class="table table-hover" *ngIf="listEmploye">
         <thead>
@@ -10,7 +10,7 @@
           <th scope="col">Département</th>
           <th scope="col">Téléphone</th>
           <th scope="col">Email</th>
-          <th>Salaire</th>
+          <th>Salaire en Dh</th>
           <th>CIN</th>
           <th>Date d'Embauche</th>
           <th scope="col"></th>
@@ -18,6 +18,7 @@
         </tr>
         </thead>
         <tbody>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <tr *ngFor="let e of listEmploye">
           <td>{{e.nom}}</td>
           <td>{{e.prenom}}</td>
@@ -28,13 +29,13 @@
           <td>{{e.cin}}</td>
           <td>{{e.datedebut}}</td>
           <td>
-            <a class="clickable" (click)="onEditEmploye(e.id)" >Editer</a>
+            <a class="clickable glyphicon glyphicon-edit" (click)="onEditEmploye(e.id)" >Editer</a>
           </td>
           <td>
-            <a class="clickable" (click)="onDeleteEmploye(e)" >Supprimer</a>
+            <a class="clickable glyphicon glyphicon-remove" (click)="onDeleteEmploye(e)" >Supprimer</a>
           </td>
           <td>
-            <a class="clickable" (click)="incSalary(e.id)" >Evaluer</a>
+            <a class="clickable glyphicon glyphicon-plus" (click)="incSalary(e.id)" >Prime</a>
           </td>
         </tr>
         </tbody>
